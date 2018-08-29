@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="row">
+    <input type="date" style="margin: 0 auto 20px" [(ngModel)]="reportDate" (ngModelChange)="checkDateTime($event)">
+    <p>{{ reportDate }}</p>
+  </div>
+  <!--<select name="xxx" id="">-->
+    <!--<option value="xxx">aaa</option>-->
+    <!--<option value="xxx">vvv</option>-->
+  <!--</select>-->
+  <div class="row" *ngFor="let item of ReporterInfo">
+    <ngx-personl-report class="col-sm-12" [ReportList]="item.reporter_data" [Name]="item.reporter_name" [taskDate]="reportDate"></ngx-personl-report>
+  </div>
+</div>

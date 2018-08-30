@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { LocalDataSource} from 'ng2-smart-table';
-import {ApiService} from "../../@core/data/api.service";
+import {ApiService} from '../../@core/data/api.service';
 
 @Component({
   selector: 'ngx-demand',
@@ -80,16 +80,16 @@ export class DemandComponent implements OnInit {
   constructor(private http: Http, private service: ApiService) {
     // const data = this.service.getData();
     this.demand_url = this.service.getUrl('demand');
-    console.log(this.demand_url);
+    // console.log(this.demand_url);
     this.http.get(this.demand_url).subscribe(
       (res: Response) => {
-        console.log(res);
+        // console.log(res);
         const data = res.json();
         // console.log(data);
         this.source.load(data);
       },
       (err: any) => {
-        console.log(err);
+        // console.log(err);
         alert(err);
       },
     );
@@ -97,18 +97,18 @@ export class DemandComponent implements OnInit {
   }
 
   onDeleteConfirm(event): void {
-    console.log(event);
+    // console.log(event);
     if (window.confirm('Are you sure you want to delete?')) {
-      let data = {'_id': event.data._id};
-      console.log(data);
+      const data = {'_id': event.data._id};
+      // console.log(data);
       this.http.delete(this.demand_url, {params: data}).subscribe(
         (res: Response) => {
-          let data = res;
-          console.log(data);
+          // let data = res;
+          // console.log(data);
           event.confirm.resolve();
         },
         (err: any) => {
-          console.log(err);
+          // console.log(err);
           alert(err);
         },
       );
@@ -117,7 +117,7 @@ export class DemandComponent implements OnInit {
     }
   }
   onCreateConfirm(event): void {
-    console.log(event.newData);
+    // console.log(event.newData);
     const body = {
       '_id': event.newData['_id'],
       'name': event.newData['name'],
@@ -129,23 +129,23 @@ export class DemandComponent implements OnInit {
       'design_doc': event.newData['design_doc'],
       'test_case': event.newData['test_case'],
     };
-    console.log(body);
+    // console.log(body);
 
     this.http.post(this.demand_url, body).subscribe(
       (res: Response) => {
-        let data = res;
-        console.log(data);
+        // let data = res;
+        // console.log(data);
         event.confirm.resolve();
       },
       (err: any) => {
-        console.log(err);
+        // console.log(err);
         alert(err);
       },
     );
     // this.source.prepend(event.newData);
   }
   onEditConfirm(event): void {
-    console.log(event);
+    // console.log(event);
     // let oldData = event.data;
     // let newData = event.newData;
     const body = {
@@ -159,15 +159,15 @@ export class DemandComponent implements OnInit {
       'design_doc': event.newData['design_doc'],
       'test_case': event.newData['test_case'],
     };
-    console.log(body);
+    // console.log(body);
     this.http.put(this.demand_url, body).subscribe(
       (res: Response) => {
-        let data = res;
-        console.log(data);
+        // let data = res;
+        // console.log(data);
         event.confirm.resolve();
       },
       (err: any) => {
-        console.log(err);
+        // console.log(err);
         alert(err);
       },
     );

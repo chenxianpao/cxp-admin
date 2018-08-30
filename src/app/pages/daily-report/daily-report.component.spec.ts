@@ -8,7 +8,7 @@ describe('DailyReportComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DailyReportComponent ]
+      declarations: [ DailyReportComponent ],
     })
     .compileComponents();
   }));

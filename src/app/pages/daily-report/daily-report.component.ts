@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import DateTimeFormat = Intl.DateTimeFormat;
+import { Component } from '@angular/core';
+// import DateTimeFormat = Intl.DateTimeFormat;
 import {Http, Response} from '@angular/http';
-import {ApiService} from "../../@core/data/api.service";
+import {ApiService} from '../../@core/data/api.service';
 // import {formatDate} from "@angular/common";
 
 @Component({
@@ -30,12 +30,12 @@ export class DailyReportComponent {
     this.http.get(this.daily_report_url,
       {params: {user_list: this.reportUsers, task_date: this.reportDate}}).subscribe(
       (res: Response) => {
-        let data = res.json();
-        console.log(data);
+        const data = res.json();
+        // console.log(data);
         this.ReporterInfo = data;
       },
       (err: any) => {
-        console.log(err);
+        // console.log(err);
         alert(err);
       },
       );
@@ -67,12 +67,12 @@ export class DailyReportComponent {
     this.http.get(this.daily_report_url,
       {params: {user_list: this.reportUsers, task_date: dataTime}}).subscribe(
       (res: Response) => {
-        let data = res.json();
-        console.log(data);
+        // let data = res.json();
+        // console.log(data);
         this.ReporterInfo = data;
       },
       (err: any) => {
-        console.log(err);
+        // console.log(err);
         alert(err);
       },
     );

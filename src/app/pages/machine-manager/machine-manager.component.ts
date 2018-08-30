@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { LocalDataSource} from 'ng2-smart-table';
-import {UsageComponent} from "./usage/usage.component";
-import {ApiService} from "../../@core/data/api.service";
+// import {UsageComponent} from "./usage/usage.component";
+import { ApiService } from '../../@core/data/api.service';
 // import { Cell, DefaultEditor, Editor } from '../../../../ng2-smart-table';
 @Component({
   selector: 'ngx-machine-manager',
@@ -96,11 +96,11 @@ export class MachineManagerComponent implements OnInit {
   onDeleteConfirm(event): void {
     // console.log(event);
     if (window.confirm('Are you sure you want to delete?')) {
-      let data = {'hostname': event.data.hostname};
+      const data = {'hostname': event.data.hostname};
       // console.log(data);
       this.http.delete(this.machine_url, {params: data}).subscribe(
         (res: Response) => {
-        let data = res;
+        // let data = res;
         // console.log(data);
       });
       event.confirm.resolve();
@@ -132,7 +132,7 @@ export class MachineManagerComponent implements OnInit {
 
     // let cxp = new RequestOptions({headers: headers});
     this.http.post(this.machine_url, body).subscribe((res: Response) => {
-      let data = res;
+      // let data = res;
       // console.log(data);
     });
     // this.source.prepend(event.newData);
@@ -152,7 +152,7 @@ export class MachineManagerComponent implements OnInit {
 
 
     this.http.put(this.machine_url, body).subscribe((res: Response) => {
-      let data = res;
+      // let data = res;
       // console.log(data);
     });
     event.confirm.resolve();

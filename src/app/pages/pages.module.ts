@@ -16,6 +16,8 @@ import { DemandComponent } from './demand/demand.component';
 // import { DailyReportComponent } from './daily-report/daily-report.component';
 // import { PersonlReportComponent } from './daily-report/personl-report/personl-report.component';
 import { DailyReportModule } from './daily-report/daily-report.module';
+import { ToolsComponent } from './tools/tools.component';
+import { HuangliComponent } from './tools/huangli/huangli.component';
 const PAGES_COMPONENTS = [
   PagesComponent,
 ];
@@ -38,6 +40,8 @@ const PAGES_COMPONENTS = [
     UsageComponent,
     TrainComponent,
     DemandComponent,
+    ToolsComponent,
+    HuangliComponent,
   ],
   entryComponents: [
     UsageComponent,

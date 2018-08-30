@@ -78,16 +78,16 @@ export class TrainComponent implements OnInit {
   constructor(private http: Http, private service: ApiService) {
     // const data = this.service.getData();
     this.train_url = this.service.getUrl('train');
-    console.log(this.train_url);
+    // console.log(this.train_url);
     this.http.get(this.train_url).subscribe(
       (res: Response) => {
-        console.log(res);
+        // console.log(res);
         const data = res.json();
         // console.log(data);
         this.source.load(data);
       },
       (err: any) => {
-        console.log(err);
+        // console.log(err);
         alert(err);
       },
     );
@@ -95,18 +95,18 @@ export class TrainComponent implements OnInit {
   }
 
   onDeleteConfirm(event): void {
-    console.log(event);
+    // console.log(event);
     if (window.confirm('Are you sure you want to delete?')) {
-      let data = {'_id': event.data._id};
-      console.log(data);
+      const data = {'_id': event.data._id};
+      // console.log(data);
       this.http.delete(this.train_url, {params: data}).subscribe(
         (res: Response) => {
-          let data = res;
-          console.log(data);
+          // let data = res;
+          // console.log(data);
           event.confirm.resolve();
         },
         (err: any) => {
-          console.log(err);
+          // console.log(err);
           alert(err);
         },
       );
@@ -116,7 +116,7 @@ export class TrainComponent implements OnInit {
     }
   }
   onCreateConfirm(event): void {
-    console.log(event.newData);
+    // console.log(event.newData);
     // const d = new URLSearchParams();
     // d.append('hostname', event.newData['hostname']);
     // d.append('hostname', event.newData['hostname']);
@@ -132,7 +132,7 @@ export class TrainComponent implements OnInit {
       'students': event.newData['students'],
       'annex': event.newData['annex'],
     };
-    console.log(body);
+    // console.log(body);
     // let headers = new Headers({'Content-Type': 'application/x-www-form-urlencoded'});
     // // let _data = createPostSearchParams(d);
     // let myParams = new URLSearchParams();
@@ -144,19 +144,19 @@ export class TrainComponent implements OnInit {
     // let cxp = new RequestOptions({headers: headers});
     this.http.post(this.train_url, body).subscribe(
       (res: Response) => {
-        let data = res;
-        console.log(data);
+        // let data = res;
+        // console.log(data);
         event.confirm.resolve();
       },
       (err: any) => {
-        console.log(err);
+        // console.log(err);
         alert(err);
       },
     );
     // this.source.prepend(event.newData);
   }
   onEditConfirm(event): void {
-    console.log(event);
+    // console.log(event);
     // let oldData = event.data;
     // let newData = event.newData;
     const body = {
@@ -169,17 +169,17 @@ export class TrainComponent implements OnInit {
       'students': event.newData['students'],
       'annex': event.newData['annex'],
     };
-    console.log(body);
+    // console.log(body);
 
 
     this.http.put(this.train_url, body).subscribe(
       (res: Response) => {
-        let data = res;
-        console.log(data);
+        // let data = res;
+        // console.log(data);
         event.confirm.resolve();
       },
       (err: any) => {
-        console.log(err);
+        // console.log(err);
         alert(err);
       },
     );

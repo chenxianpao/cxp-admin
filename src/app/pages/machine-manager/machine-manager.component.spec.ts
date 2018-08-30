@@ -8,7 +8,7 @@ describe('MachineManagerComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MachineManagerComponent ]
+      declarations: [ MachineManagerComponent ],
     })
     .compileComponents();
   }));

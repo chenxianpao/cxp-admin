@@ -10,7 +10,7 @@ import { MachineManagerComponent } from './machine-manager/machine-manager.compo
 import { TrainComponent } from './train/train.component';
 import { DemandComponent } from './demand/demand.component';
 import { DailyReportComponent } from './daily-report/daily-report.component';
-
+import { ToolsComponent } from './tools/tools.component';
 const routes: Routes = [{
   path: '',
   component: PagesComponent,
@@ -21,8 +21,8 @@ const routes: Routes = [{
     path: 'iot-dashboard',
     component: DashboardComponent,
   }, {
-    path: 'shortcuts',
-    component: ShortcutsComponent,
+    path: 'tools',
+    component: ToolsComponent,
   }, {
     path: 'machine-manager',
     component: MachineManagerComponent,

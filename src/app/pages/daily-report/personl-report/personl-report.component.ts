@@ -1,8 +1,8 @@
 import {Component, Input, OnInit, SimpleChanges} from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { LocalDataSource} from 'ng2-smart-table';
-import {isUndefined} from "util";
-import {ApiService} from "../../../@core/data/api.service";
+import {isUndefined} from 'util';
+import {ApiService} from '../../../@core/data/api.service';
 
 @Component({
   selector: 'ngx-personl-report',
@@ -123,7 +123,7 @@ export class PersonlReportComponent implements OnInit {
     // console.log(this.ReportList);
     // this.source.load(this.ReportList);
   }
-  ngOnChanges(changes: SimpleChanges): void {
+  OnChanges(changes: SimpleChanges): void {
     // console.log(typeof(changes.ReportList.currentValue));
     // if (typeof(changes.ReportList.currentValue) !== 'undefined') {
     //   console.log(changes.ReportList.currentValue);
@@ -140,18 +140,18 @@ export class PersonlReportComponent implements OnInit {
     // console.log(changes.ReportList.currentValue);
   }
   onDeleteConfirm(event): void {
-    console.log(event);
+    // console.log(event);
     if (window.confirm('Are you sure you want to delete?')) {
-      let data = {'_id': event.data._id};
-      console.log(data);
+      const data = {'_id': event.data._id};
+      // console.log(data);
       this.http.delete(this.daily_report_url, {params: data}).subscribe(
         (res: Response) => {
-          let data = res;
-          console.log(data);
+          // let data = res;
+          // console.log(data);
           event.confirm.resolve();
         },
         (err: any) => {
-          console.log(err);
+          // console.log(err);
           alert(err);
         },
       );
@@ -168,9 +168,9 @@ export class PersonlReportComponent implements OnInit {
     return (((1 + Math.random()) * 0x10000) | 0).toString(16).substring(1);
   }
   onCreateConfirm(event): void {
-    console.log(event.newData);
+    // console.log(event.newData);
     const task_id = this.getUUID();
-    console.log(task_id);
+    // console.log(task_id);
     const body = {
       '_id': task_id,
       'task_owner': this.Name,
@@ -181,23 +181,23 @@ export class PersonlReportComponent implements OnInit {
       'task_date': this.taskDate,
       'task_progress': event.newData['task_progress'],
     };
-    console.log(body);
+    // console.log(body);
 
     this.http.post(this.daily_report_url, body).subscribe(
       (res: Response) => {
-        let data = res;
-        console.log(data);
+        // let data = res;
+        // console.log(data);
         event.confirm.resolve();
       },
       (err: any) => {
-        console.log(err);
+        // console.log(err);
         alert(err);
       },
     );
     // this.source.prepend(event.newData);
   }
   onEditConfirm(event): void {
-    console.log(event);
+    // console.log(event);
     // let oldData = event.data;
     // let newData = event.newData;
     const body = {
@@ -210,15 +210,15 @@ export class PersonlReportComponent implements OnInit {
       'task_date': this.taskDate,
       'task_progress': event.newData['task_progress'],
     };
-    console.log(body);
+    // console.log(body);
     this.http.put(this.daily_report_url, body).subscribe(
       (res: Response) => {
-        let data = res;
-        console.log(data);
+        // let data = res;
+        // console.log(data);
         event.confirm.resolve();
       },
       (err: any) => {
-        console.log(err);
+        // console.log(err);
         alert(err);
       },
       );

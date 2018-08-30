@@ -3,28 +3,28 @@ import { NbMenuItem } from '@nebular/theme';
 export const MENU_ITEMS: NbMenuItem[] = [
   {
     title: '快捷方式',
-    icon: 'nb-e-commerce',
-    link: '/pages/shortcuts',
+    icon: 'nb-paper-plane',
+    link: '/pages/tools',
     home: true,
   },
   {
     title: '机器管理',
-    icon: 'nb-home',
+    icon: 'nb-gear',
     link: '/pages/machine-manager',
   },
   {
     title: '需求跟踪',
-    icon: 'nb-home',
+    icon: 'nb-plus-circled',
     link: '/pages/demand',
   },
   {
     title: '培训管理',
-    icon: 'nb-home',
+    icon: 'nb-compose',
     link: '/pages/train',
   },
   {
     title: '日报管理',
-    icon: 'nb-home',
+    icon: 'nb-person',
     link: '/pages/daily-report',
   },
   {

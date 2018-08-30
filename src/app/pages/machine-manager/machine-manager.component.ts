@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { LocalDataSource} from 'ng2-smart-table';
 import {UsageComponent} from "./usage/usage.component";
+import {ApiService} from "../../@core/data/api.service";
 // import { Cell, DefaultEditor, Editor } from '../../../../ng2-smart-table';
 @Component({
   selector: 'ngx-machine-manager',
@@ -77,13 +78,14 @@ export class MachineManagerComponent implements OnInit {
     },
     mode: 'inline',
   };
-  public machine_url: string = '/machine/';
+  public machine_url: string;
 
   source: LocalDataSource = new LocalDataSource();
-  constructor(private http: Http) {
+  constructor(private http: Http, private service: ApiService) {
     // const data = this.service.getData();
+    this.machine_url = this.service.getUrl('machine');
     this.http.get(this.machine_url).subscribe((res: Response) => {
-      console.log(res);
+      // console.log(res);
       const data = res.json();
       // console.log(data);
       this.source.load(data);
@@ -92,14 +94,14 @@ export class MachineManagerComponent implements OnInit {
   }
 
   onDeleteConfirm(event): void {
-    console.log(event);
+    // console.log(event);
     if (window.confirm('Are you sure you want to delete?')) {
       let data = {'hostname': event.data.hostname};
-      console.log(data);
+      // console.log(data);
       this.http.delete(this.machine_url, {params: data}).subscribe(
         (res: Response) => {
         let data = res;
-        console.log(data);
+        // console.log(data);
       });
       event.confirm.resolve();
     } else {
@@ -107,7 +109,7 @@ export class MachineManagerComponent implements OnInit {
     }
   }
   onCreateConfirm(event): void {
-    console.log(event.newData);
+    // console.log(event.newData);
     // const d = new URLSearchParams();
     // d.append('hostname', event.newData['hostname']);
     // d.append('hostname', event.newData['hostname']);
@@ -119,7 +121,7 @@ export class MachineManagerComponent implements OnInit {
       'cluster': event.newData['cluster'],
       'use_desc': event.newData['use_desc'],
     };
-    console.log(body);
+    // console.log(body);
     // let headers = new Headers({'Content-Type': 'application/x-www-form-urlencoded'});
     // // let _data = createPostSearchParams(d);
     // let myParams = new URLSearchParams();
@@ -131,13 +133,13 @@ export class MachineManagerComponent implements OnInit {
     // let cxp = new RequestOptions({headers: headers});
     this.http.post(this.machine_url, body).subscribe((res: Response) => {
       let data = res;
-      console.log(data);
+      // console.log(data);
     });
     // this.source.prepend(event.newData);
     event.confirm.resolve();
   }
   onEditConfirm(event): void {
-    console.log(event);
+    // console.log(event);
     // let oldData = event.data;
     // let newData = event.newData;
     const body = {
@@ -146,12 +148,12 @@ export class MachineManagerComponent implements OnInit {
       'cluster': event.newData['cluster'],
       'use_desc': event.newData['use_desc'],
     };
-    console.log(body);
+    // console.log(body);
 
 
     this.http.put(this.machine_url, body).subscribe((res: Response) => {
       let data = res;
-      console.log(data);
+      // console.log(data);
     });
     event.confirm.resolve();
   }

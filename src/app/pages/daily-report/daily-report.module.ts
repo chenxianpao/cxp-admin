@@ -3,11 +3,11 @@
  */
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-// import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { ThemeModule } from '../../@theme/theme.module';
 import { PersonlReportComponent } from './personl-report/personl-report.component';
 import { DailyReportComponent } from './daily-report.component';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
+// import {ApiService} from "../../@core/data/api.service";
 @NgModule({
   imports: [
     CommonModule,
@@ -18,6 +18,9 @@ import { Ng2SmartTableModule } from 'ng2-smart-table';
     DailyReportComponent,
     PersonlReportComponent,
   ],
+  // providers: [
+  //   ApiService,
+  // ],
 })
 
 export class DailyReportModule { }

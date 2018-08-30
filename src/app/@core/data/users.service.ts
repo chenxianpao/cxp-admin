@@ -9,7 +9,7 @@ let counter = 0;
 export class UserService {
 
   private users = {
-    cxp: { name: 'whosyourdaddy', picture: 'assets/images/nick.png' },
+    cxp: { name: 'whosyourdaddy', picture: 'assets/images/smile.jpg' },
     nick: { name: 'Nick Jones', picture: 'assets/images/nick.png' },
     eva: { name: 'Eva Moor', picture: 'assets/images/eva.png' },
     jack: { name: 'Jack Williams', picture: 'assets/images/jack.png' },

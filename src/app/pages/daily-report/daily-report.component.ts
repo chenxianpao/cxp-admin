@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import DateTimeFormat = Intl.DateTimeFormat;
 import {Http, Response} from '@angular/http';
+import {ApiService} from "../../@core/data/api.service";
 // import {formatDate} from "@angular/common";
 
 @Component({
@@ -12,8 +13,8 @@ export class DailyReportComponent {
   ReporterInfo: Array<ReporterData>;
   reportDate: string;
   reportUsers: Array<string>;
-  public daily_report_url: string = '/daily_report/';
-  constructor(private http: Http) {
+  public daily_report_url: string;
+  constructor(private http: Http, private service: ApiService) {
     // this.ReporterData = {reporter: [{task_type: 'a', task_content: 'a', task_cost: 'a', task_risk: 'a'},
     //   {task_type: 'b', task_content: 'b', task_cost: 'b', task_risk: 'b'}],
     // 'ddd': [{task_type: 'c', task_content: 'c', task_cost: 'c', task_risk: 'c'},
@@ -23,6 +24,7 @@ export class DailyReportComponent {
     // console.log(formatDate(new Date().getTime()));
     // let a = new Date().toLocaleDateString('yyyy-MM-dd');
     // console.log(a);
+    this.daily_report_url = this.service.getUrl('daily_report');
     this.reportDate = this.getCurrentDate();
     this.reportUsers = ['ssr', 'zjx', 'txm', 'cxp'];
     this.http.get(this.daily_report_url,

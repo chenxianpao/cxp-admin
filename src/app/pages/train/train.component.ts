@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { LocalDataSource} from 'ng2-smart-table';
+import { ApiService } from '../../@core/data/api.service';
 
 @Component({
   selector: 'ngx-train',
@@ -71,11 +72,13 @@ export class TrainComponent implements OnInit {
   };
 
   source: LocalDataSource = new LocalDataSource();
-  // public train_url: string = '/train/';
-  public train_url: string = 'http://127.0.0.1:8000/train/';
+  public train_url: string;
+  // public train_url: string = 'http://127.0.0.1:8000/train/';
 
-  constructor(private http: Http) {
+  constructor(private http: Http, private service: ApiService) {
     // const data = this.service.getData();
+    this.train_url = this.service.getUrl('train');
+    console.log(this.train_url);
     this.http.get(this.train_url).subscribe(
       (res: Response) => {
         console.log(res);

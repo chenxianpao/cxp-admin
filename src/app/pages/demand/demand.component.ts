@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { LocalDataSource} from 'ng2-smart-table';
+import {ApiService} from "../../@core/data/api.service";
 
 @Component({
   selector: 'ngx-demand',
@@ -75,9 +76,11 @@ export class DemandComponent implements OnInit {
   };
 
   source: LocalDataSource = new LocalDataSource();
-  public demand_url: string = '/demand/';
-  constructor(private http: Http) {
+  public demand_url: string;
+  constructor(private http: Http, private service: ApiService) {
     // const data = this.service.getData();
+    this.demand_url = this.service.getUrl('demand');
+    console.log(this.demand_url);
     this.http.get(this.demand_url).subscribe(
       (res: Response) => {
         console.log(res);

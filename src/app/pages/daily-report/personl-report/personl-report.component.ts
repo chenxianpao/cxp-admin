@@ -2,6 +2,7 @@ import {Component, Input, OnInit, SimpleChanges} from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { LocalDataSource} from 'ng2-smart-table';
 import {isUndefined} from "util";
+import {ApiService} from "../../../@core/data/api.service";
 
 @Component({
   selector: 'ngx-personl-report',
@@ -31,7 +32,7 @@ export class PersonlReportComponent implements OnInit {
   @Input() Name: string;
   @Input() taskDate: string;
   // Test: Array<String>;
-  public daily_report_url: string = '/daily_report/';
+  public daily_report_url: string;
 
   settings = {
     add: {
@@ -110,7 +111,8 @@ export class PersonlReportComponent implements OnInit {
 
   source: LocalDataSource = new LocalDataSource();
 
-  constructor(private http: Http) {
+  constructor(private http: Http, private service: ApiService) {
+    this.daily_report_url = this.service.getUrl('daily_report');
     // const data = this.service.getData();
     // this.http.get('http://127.0.0.1:8000/demand/').subscribe((res: Response) => {
     //   console.log(res);

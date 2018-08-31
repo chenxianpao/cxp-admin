@@ -76,7 +76,7 @@ export class PersonlReportComponent implements OnInit {
       },
       task_content: {
         title: '内容',
-        type: 'string',
+        type: 'text',
         width: '50%',
         editor: {
           type: 'textarea',

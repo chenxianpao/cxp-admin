@@ -1,3 +1,64 @@
-<p>
-  huangli works!
-</p>
+<div class="container">
+  <div class="title">
+    黄历<sup>beta</sup>
+  </div>
+  <div class="date">
+    <!--今天是{{ }}年{{ }}月{{ }}日 星期{{ }}-->
+    {{ timeString }}
+  </div>
+  <div class="good">
+    <div class="title">
+      <table>
+        <tr>
+          <td>宜</td>
+        </tr>
+      </table>
+    </div>
+    <div class="content">
+      <!--$('.good .content ul').append('<li><div class="name">' + event.name + '</div><div class="description">' + event.good + '</div></li>');-->
+      <ul>
+        <li *ngFor="let item of goodList">
+          <div class="name">{{ item.name }}</div>
+          <div class="description">{{ item.good }}</div>
+        </li>
+      </ul>
+    </div>
+    <!--<div class="content">-->
+      <!--<ul></ul>-->
+    <!--</div>-->
+    <!--<div class="clear"></div>-->
+  </div>
+  <div class="split"></div>
+  <div class="bad">
+    <div class="title">
+      <table>
+        <tr>
+          <td>不宜</td>
+        </tr>
+      </table>
+    </div>
+    <div class="content">
+      <ul>
+        <li *ngFor="let item of badList">
+          <div class="name">{{ item.name }}</div>
+          <div class="description">{{ item.bad }}</div>
+        </li>
+      </ul>
+    </div>
+    <!--<div class="content">-->
+      <!--<ul></ul>-->
+    <!--</div>-->
+    <!--<div class="clear"></div>-->
+    <div class="split"></div>
+
+    <!--<div class="line-tip">-->
+      <!--<strong>女神亲近指数：</strong><span class="goddes_value"></span>-->
+    <!--</div>-->
+  </div>
+  <div class="line-tip">
+    <strong>座位朝向：</strong>面向<span class="direction_value">{{ direction }}</span>写程序，BUG 最少。
+  </div>
+  <div class="line-tip">
+    <strong>今日宜饮：</strong><span class="drink_value">{{ drink }}</span>
+  </div>
+</div>

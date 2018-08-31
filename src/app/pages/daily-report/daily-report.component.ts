@@ -67,7 +67,7 @@ export class DailyReportComponent {
     this.http.get(this.daily_report_url,
       {params: {user_list: this.reportUsers, task_date: dataTime}}).subscribe(
       (res: Response) => {
-        // let data = res.json();
+        let data = res.json();
         // console.log(data);
         this.ReporterInfo = data;
       },

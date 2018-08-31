@@ -34,38 +34,68 @@ export class TrainComponent implements OnInit {
     columns: {
       _id: {
         title: '序号',
-        type: 'number',
+        type: 'text',
         editable: false,
         sort: true,
         sortDirection: 'desc',
+        editor: {
+          type: 'textarea',
+        },
       },
       title: {
         title: '主题',
-        type: 'string',
+        type: 'text',
+        // width: '50%',
+        editor: {
+          type: 'textarea',
+        },
+        // valuePrepareFunction: (cell, row) => {
+        //   return 'aaa';
+        // },
       },
       content: {
         title: '内容',
-        type: 'string',
+        type: 'text',
+        // width: '50%',
+        editor: {
+          type: 'textarea',
+        },
       },
       lecturer: {
         title: '讲师',
-        type: 'string',
-      },
+        type: 'text',
+        // width: '50%',
+        editor: {
+          type: 'textarea',
+        },      },
       time: {
         title: '时间',
-        type: 'string',
-      },
+        type: 'text',
+        // width: '50%',
+        editor: {
+          type: 'textarea',
+        },      },
       duration: {
         title: '课时',
-        type: 'string',
-      },
+        type: 'text',
+        // width: '50%',
+        editor: {
+          type: 'textarea',
+        },      },
       students: {
         title: '参与人员',
-        type: 'string',
-      },
+        type: 'text',
+        // width: '50%',
+        editor: {
+          type: 'textarea',
+        },      },
       annex: {
         title: '附件',
-        type: 'string',
+        type: 'text',
+        // width: '50%',
+        editor: {
+          type: 'textarea',
+        },
       },
     },
     mode: 'inline',

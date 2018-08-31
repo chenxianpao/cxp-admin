@@ -61,7 +61,7 @@ const routes: Routes = [{
     loadChildren: './miscellaneous/miscellaneous.module#MiscellaneousModule',
   }, {
     path: '',
-    redirectTo: 'shortcuts',
+    redirectTo: 'tools',
     pathMatch: 'full',
   }, {
     path: '**',

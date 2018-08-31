@@ -39,20 +39,45 @@ export class MachineManagerComponent implements OnInit {
       // },
       hostname: {
         title: '主机名',
-        type: 'string',
+        type: 'text',
         editable: false,
+        // width: '50%',
+        editor: {
+          type: 'textarea',
+        },
       },
       ip_address: {
         title: 'IP地址',
-        type: 'string',
+        type: 'text',
+        // width: '50%',
+        editor: {
+          type: 'textarea',
+        },
       },
       cluster: {
         title: '归属集群',
-        type: 'string',
+        type: 'text',
+        // width: '50%',
+        editor: {
+          type: 'textarea',
+        },
       },
       use_desc: {
         title: '使用情况',
-        type: 'string',
+        type: 'text',
+        // width: '50%',
+        editor: {
+          type: 'textarea',
+        },
+      },
+      modify_time: {
+        title: '修改时间',
+        type: 'text',
+        // width: '50%',
+        editor: {
+          type: 'textarea',
+        },
+        editable: false,
       },
       // usage: {
       //   title: '使用情况',

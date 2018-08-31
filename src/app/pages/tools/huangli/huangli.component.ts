@@ -64,9 +64,9 @@ export class HuangliComponent implements OnInit {
     {name: '上AB站', good: '还需要理由吗？', bad: '会被老板看到'},
   ];
 
-  private specials = [
-    {date: 20130221, type: 'good', name: '防核演习', description: '万一哪个疯子丢颗核弹过来...'}
-  ];
+  // private specials = [
+  //   {date: 20130221, type: 'good', name: '防核演习', description: '万一哪个疯子丢颗核弹过来...'}
+  // ];
 
   private tools = ['Eclipse写程序', 'MSOffice写文档', '记事本写程序', 'Windows8', 'Linux', 'MacOS', 'IE', 'Android设备', 'iOS设备'];
 
@@ -89,13 +89,13 @@ export class HuangliComponent implements OnInit {
     // const specialSize = this.pickSpecials();
 
     for (let i = 0; i < numGood; i++) {
-      console.log(eventArr[i]);
+      // console.log(eventArr[i]);
       this.goodList.push(eventArr[i]);
       // this.addToGood(eventArr[i]);
     }
 
     for (let i = 0; i < numBad; i++) {
-      console.log(eventArr[numGood + i]);
+      // console.log(eventArr[numGood + i]);
       this.badList.push(eventArr[numGood + i]);
       // this.addToBad(eventArr[numGood + i]);
     }

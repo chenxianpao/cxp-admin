@@ -67,28 +67,32 @@ export class TrainComponent implements OnInit {
         // width: '50%',
         editor: {
           type: 'textarea',
-        },      },
+        },
+      },
       time: {
         title: '时间',
         type: 'text',
         // width: '50%',
         editor: {
           type: 'textarea',
-        },      },
+        },
+      },
       duration: {
         title: '课时',
         type: 'text',
         // width: '50%',
         editor: {
           type: 'textarea',
-        },      },
+        },
+      },
       students: {
         title: '参与人员',
         type: 'text',
         // width: '50%',
         editor: {
           type: 'textarea',
-        },      },
+        },
+      },
       annex: {
         title: '附件',
         type: 'text',

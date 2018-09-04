@@ -34,45 +34,83 @@ export class DemandComponent implements OnInit {
     columns: {
       _id: {
         title: '需求编号',
-        type: 'text',
+        type: 'number',
         editable: false,
         sort: true,
         sortDirection: 'desc',
+        editor: {
+          type: 'textarea',
+        },
       },
       name: {
         title: '需求名称',
-        type: 'string',
+        type: 'text',
+        editor: {
+          type: 'textarea',
+        },
       },
       desc: {
         title: '需求描述',
-        type: 'string',
+        type: 'text',
+        editor: {
+          type: 'textarea',
+        },
       },
       version: {
         title: '支持版本',
-        type: 'string',
+        type: 'text',
+        editor: {
+          type: 'textarea',
+        },
       },
       principal: {
         title: '负责人',
-        type: 'string',
+        type: 'text',
+        editor: {
+          type: 'textarea',
+        },
       },
       task_progress: {
         title: '进展进度',
-        type: 'string',
+        type: 'text',
+        editor: {
+          type: 'textarea',
+        },
       },
       task_desc: {
         title: '进展描述',
-        type: 'string',
+        type: 'text',
+        editor: {
+          type: 'textarea',
+        },
       },
       design_doc: {
         title: '设计文档',
-        type: 'string',
+        type: 'text',
+        editor: {
+          type: 'textarea',
+        },
       },
       test_case: {
         title: '测试用例',
-        type: 'string',
+        type: 'text',
+        editor: {
+          type: 'textarea',
+        },
+      },
+      modify_time: {
+        title: '修改时间(不填)',
+        type: 'text',
+        editor: {
+          type: 'textarea',
+        },
       },
     },
     mode: 'inline',
+    // pager: {
+    //   display: true,
+    //   perPage: 15,
+    // },
   };
 
   source: LocalDataSource = new LocalDataSource();
@@ -128,6 +166,7 @@ export class DemandComponent implements OnInit {
       'task_desc': event.newData['task_desc'],
       'design_doc': event.newData['design_doc'],
       'test_case': event.newData['test_case'],
+      // 'modify_time': event.newData['modify_time'],
     };
     // console.log(body);
 
@@ -158,6 +197,7 @@ export class DemandComponent implements OnInit {
       'task_desc': event.newData['task_desc'],
       'design_doc': event.newData['design_doc'],
       'test_case': event.newData['test_case'],
+      // 'modify_time': event.newData['modify_time'],
     };
     // console.log(body);
     this.http.put(this.demand_url, body).subscribe(

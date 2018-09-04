@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-xxxl-12 col-md-12">
+  <div class="col-md-12 col-xxxl-12 shortcut">
     <table class="table table-striped">
       <thead>
       <tr>
@@ -9,7 +9,7 @@
       </thead>
       <tbody>
       <tr *ngFor="let item of this.toolList">
-        <td width="50%"><a href="{{ item.url }}"> {{ item.name }}</a></td>
+        <td><a href="{{ item.url }}"> {{ item.name }}</a></td>
         <td>{{ item.desc }}</td>
       </tr>
       </tbody>

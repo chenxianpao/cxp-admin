@@ -34,7 +34,7 @@ export class TrainComponent implements OnInit {
     columns: {
       _id: {
         title: '序号',
-        type: 'text',
+        type: 'number',
         editable: false,
         sort: true,
         sortDirection: 'desc',
@@ -103,6 +103,9 @@ export class TrainComponent implements OnInit {
       },
     },
     mode: 'inline',
+    pager: {
+      display: true,
+    },
   };
 
   source: LocalDataSource = new LocalDataSource();

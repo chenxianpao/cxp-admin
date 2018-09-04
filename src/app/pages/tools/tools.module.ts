@@ -5,6 +5,7 @@ import { NgModule } from '@angular/core';
 import { ThemeModule } from '../../@theme/theme.module';
 import { ShortcutsComponent } from './shortcuts/shortcuts.component';
 import { HuangliComponent } from './huangli/huangli.component';
+import { ToolsComponent } from './tools.component';
 
 @NgModule({
   imports: [
@@ -14,6 +15,7 @@ import { HuangliComponent } from './huangli/huangli.component';
   declarations: [
     ShortcutsComponent,
     HuangliComponent,
+    ToolsComponent,
     // DashboardComponent,
     // StatusCardComponent,
     // TemperatureDraggerComponent,

@@ -18,7 +18,7 @@ export class ShortcutsComponent implements OnInit {
       {'url': 'http://192.169.28.203', 'name': 'RAP2', 'desc': '在线接口管理工具'},
       {'url': 'http://git.hikdata.com', 'name': 'GIT仓库', 'desc': '事业部GIT仓库'},
       {'url': 'http://192.169.29.214:8080', 'name': 'Jenkins(旧)', 'desc': '云存储编辑打包构建工具，用于v2.0.1.0之前的版本'},
-      {'url': 'http://192.169.100.207:8080', 'name': 'Jenkins(新)', 'desc': '云存储编辑打包构建工具，用于当前版本'},
+      {'url': 'http://192.169.100.207:8080', 'name': 'Jenkins(新)', 'desc': '云存储编辑打包构建工具，用于当前版本（shensiran/shensiran）'},
     ];
   }
   ngOnInit() {
